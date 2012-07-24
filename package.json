@@ -1,7 +1,7 @@
 {
   "name": "gravatar-component",
   "description": "Simple browser implementation of the Gravatar API",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "md5-component": "0.0.1",
     "jsonp": "0.0.1"
