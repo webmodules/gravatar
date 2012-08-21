@@ -4,20 +4,20 @@
  */
 
 var md5 = require('md5')
-  , jsonp = require('jsonp')
+  , jsonp = require('jsonp');
 
 /**
  * Creates an avatar <img> element
  *
  * @param {String} email
  * @param {Number} size (150)
- * @return {Image} 
+ * @return {Image} image dom
  * @api public
  */
 
 exports.img = function (email, size) {
   size = size || 150;
-  var url = 'https://www.gravatar.com/avatar/' + md5(email);
+  var url = 'https://gravatar.com/avatar/' + md5(email);
   var el = document.createElement('img');
   el.setAttribute('src', url);
   if (size) {
@@ -25,7 +25,7 @@ exports.img = function (email, size) {
     el.setAttribute('height', size);
   }
   return el;
-}
+};
 
 /**
  * Looks up a profile.
@@ -36,7 +36,7 @@ exports.img = function (email, size) {
  */
 
 exports.profile = function (email, fn) {
-  jsonp('https://www.gravatar.com/' + md5(email) + '.json', function (err, obj) {
+  jsonp('https://gravatar.com/' + md5(email) + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
       fn(null, obj.entry[0]);
@@ -44,7 +44,7 @@ exports.profile = function (email, fn) {
       fn(new Error('Bad response'));
     }
   });
-}
+};
 
 /**
  * Shortcut to produce a username from an email.
@@ -63,4 +63,4 @@ exports.username = function (email, fn) {
       fn(null, '');
     }
   });
-}
+};
