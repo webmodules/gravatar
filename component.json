@@ -4,7 +4,7 @@
   "description": "Simple browser implementation of the Gravatar API",
   "version": "1.0.0",
   "dependencies": {
-    "enyo/md5": "*"
+    "enyo/md5": "*",
     "learnboost/jsonp": "0.0.2"
   },
   "scripts": ["gravatar.js"],
