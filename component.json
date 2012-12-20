@@ -2,7 +2,7 @@
   "name": "gravatar",
   "repo": "learnboost/gravatar-component",
   "description": "Simple browser implementation of the Gravatar API",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "dependencies": {
     "enyo/md5": "*"
     "learnboost/jsonp": "0.0.2"
