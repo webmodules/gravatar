@@ -17,7 +17,7 @@ var md5 = require('md5')
 
 exports.img = function (email, size) {
   size = size || 150;
-  var url = 'https://gravatar.com/avatar/' + md5(email);
+  var url = 'https://secure.gravatar.com/avatar/' + md5(email);
   var el = document.createElement('img');
   el.setAttribute('src', url);
   if (size) {
@@ -36,7 +36,7 @@ exports.img = function (email, size) {
  */
 
 exports.profile = function (email, fn) {
-  jsonp('https://gravatar.com/' + md5(email) + '.json', function (err, obj) {
+  jsonp('https://secure.gravatar.com/' + md5(email) + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
       fn(null, obj.entry[0]);
