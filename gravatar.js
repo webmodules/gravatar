@@ -4,20 +4,39 @@
  */
 
 var md5 = require('md5')
-  , jsonp = require('jsonp');
+  , jsonp = require('jsonp')
+  , querystring = require('querystring');
+
+/**
+ * Creates an avatar url
+ *
+ * @param {String} email
+ * @param {Number} size (20)
+ * @return {String} gravatar url
+ * @api public
+ */
+
+exports.url = function (email, config) {
+  config = config || {};
+  var build = querystring.stringify(config)
+    , qs = stringed === "" ? "" : "?" + stringed
+    , url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
+  return url;
+}
 
 /**
  * Creates an avatar <img> element
  *
  * @param {String} email
- * @param {Number} size (150)
+ * @param {Number} size (80)
  * @return {Image} image dom
  * @api public
  */
 
-exports.img = function (email, size) {
-  size = size || 150;
-  var url = 'https://secure.gravatar.com/avatar/' + md5(email);
+exports.img = function (email, size, config) {
+  config = config || {};
+  config.s = size || 80;
+  var url = exports.url(email, config);
   var el = document.createElement('img');
   el.setAttribute('src', url);
   if (size) {
@@ -26,6 +45,7 @@ exports.img = function (email, size) {
   }
   return el;
 };
+
 
 /**
  * Looks up a profile.
@@ -36,7 +56,8 @@ exports.img = function (email, size) {
  */
 
 exports.profile = function (email, fn) {
-  jsonp('https://secure.gravatar.com/' + md5(email) + '.json', function (err, obj) {
+  var url = exports.url(email)
+  jsonp(url + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
       fn(null, obj.entry[0]);
