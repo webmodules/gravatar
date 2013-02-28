@@ -18,8 +18,8 @@ var md5 = require('md5')
 
 exports.url = function (email, config) {
   config = config || {};
-  var build = querystring.stringify(config)
-    , qs = stringed === "" ? "" : "?" + stringed
+  var qs = querystring.stringify(config)
+    , qs = qs === "" ? "" : "?" + qs
     , url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
   return url;
 }
