@@ -5,7 +5,7 @@
 
 ## Installation
 
-    $ component install monstercat/gravatar
+    $ component install learnboost/gravatar-component
 
 ## API
 
