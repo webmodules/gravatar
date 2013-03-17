@@ -1,11 +1,12 @@
 {
   "name": "gravatar",
-  "repo": "learnboost/gravatar-component",
+  "repo": "monstercat/gravatar",
   "description": "Simple browser implementation of the Gravatar API",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "dependencies": {
     "enyo/md5": "*",
-    "learnboost/jsonp": "0.0.2"
+    "learnboost/jsonp": "0.0.2",
+    "component/querystring": "*"
   },
   "scripts": ["gravatar.js"],
   "main": "gravatar.js"
