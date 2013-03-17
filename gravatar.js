@@ -22,7 +22,7 @@ exports.url = function (email, config) {
     , qs = qs === "" ? "" : "?" + qs
     , url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
   return url;
-}
+};
 
 /**
  * Creates an avatar <img> element
@@ -33,9 +33,8 @@ exports.url = function (email, config) {
  * @api public
  */
 
-exports.img = function (email, size, config) {
+exports.img = function (email, config) {
   config = config || {};
-  config.s = size || 80;
   var url = exports.url(email, config);
   var el = document.createElement('img');
   el.setAttribute('src', url);
@@ -56,7 +55,7 @@ exports.img = function (email, size, config) {
  */
 
 exports.profile = function (email, fn) {
-  var url = exports.url(email)
+  var url = exports.url(email);
   jsonp(url + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
