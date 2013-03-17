@@ -1,4 +1,10 @@
 
+2.0.0 / 2013-03-17
+==================
+
+  * gravatar: removed size parameter, replaced with options
+  * gravatar: added Readme.md
+
 1.1.0 / 2013-02-28
 ==================
 
