@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -35,6 +34,7 @@ exports.url = function (email, config) {
 
 exports.img = function (email, config) {
   config = config || {};
+  var size = config.s || config.size;
   var url = exports.url(email, config);
   var el = document.createElement('img');
   el.setAttribute('src', url);
