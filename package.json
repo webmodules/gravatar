@@ -10,5 +10,9 @@
     "scripts": {
       "gravatar": "gravatar.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LearnBoost/gravatar-component.git"
   }
 }
