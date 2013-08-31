@@ -1,0 +1,60 @@
+<!DOCTYPE 5>
+<html>
+  <head>
+    <title>Gravatar component</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      input {
+        height: 30px;
+        line-height: 20px;
+        min-width: 300px;
+        border: 1px solid #aaa;
+        padding: 5px;
+      }
+
+      label {
+        width: 80px;
+        text-align: right;
+        margin-right: 20px;
+        display: inline-block;
+      }
+
+      body.loading input {
+        opacity: 0.3;
+      }
+
+      .image-placeholder {
+        background-color: #f2f2f2;
+        width: 512px;
+        height: 512px;
+        border: 1px solid #eee;
+        padding: 20px;
+        margin: 20px;
+      }
+
+      body.loading .image-placeholder img {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>Gravatar</h2>
+    <script src="build/build.js"></script>
+
+    <p>
+      <label>Email: </label>
+      <input name="email" type="email" value="lauramelos@gmail.com" />
+    </p>
+
+    <p>
+      <label>Size: </label>
+      <input name="size" type="number" value="512" />
+    </p>
+
+    <div class="image-placeholder"><img scr="#" /></div>
+    <script>
+      require('gravatar-test');
+    </script>
+  </body>
+</html> 
