@@ -1,6 +1,6 @@
 
 /**
- * Load component
+ * Load Components
  */
 
 var o = require('jquery');
@@ -16,6 +16,15 @@ var email = o('input[name=email]');
 var size = o('input[name=size]');
 var img;
 
+/**
+ * Print the gratar image appending
+ * an img element
+ *
+ * @param {String} email
+ * @param {Number} s
+ * @api private
+ */
+
 function printAvatar(email, s){
   if (img) img.remove();
   body.addClass('loading');
@@ -25,7 +34,6 @@ function printAvatar(email, s){
   .on('load', function(){
     body.removeClass('loading');
   });
-
 }
 
 // input keypress event
