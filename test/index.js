@@ -11,20 +11,21 @@ var Grt = require('gravatar');
  */
 
 var body = o('body');
-var img = o('.image-placeholder img');
+var img_ph = o('.image-placeholder');
 var email = o('input[name=email]');
 var size = o('input[name=size]');
+var img;
 
 function printAvatar(email, s){
-  img.removeAttr('src');
+  if (img) img.remove();
   body.addClass('loading');
 
-  var url = Grt.url(email, { s: s || 100 });
-  img
-  .attr('src', url)
+  img = o(Grt.img(email, { s: s || 100 }))
+  .appendTo(img_ph)
   .on('load', function(){
     body.removeClass('loading');
   });
+
 }
 
 // input keypress event
