@@ -12,7 +12,7 @@ var Grt = require('gravatar');
 
 var body = o('body');
 var img_ph = o('.image-placeholder');
-var email = o('input[name=email]');
+var email = o('input[name=email]').focus();
 var size = o('input[name=size]');
 var img;
 
@@ -39,9 +39,7 @@ function printAvatar(email, s){
 // input keypress event
 
 o('input')
-.focus()
 .on('keypress', function(e){
   if (body.hasClass('loading')) return;
   if (e.keyCode == 13) printAvatar(email.val(), size.val());
-})
-.trigger('keypress');
+});
