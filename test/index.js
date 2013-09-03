@@ -22,15 +22,17 @@ var img;
  * an img element
  *
  * @param {String} email
- * @param {Number} s
+ * @param {Object} opts
  * @api private
  */
 
-function printAvatar(email, s){
+function printAvatar(email, opts){
+  opts = opts || {};
+
   if (img) img.remove();
   body.addClass('loading');
 
-  img = o(Grt.img(email, { s: s || 100 }))
+  img = o(Grt.img(email, opts))
   .appendTo(img_ph)
   .on('load', function(){
     body.removeClass('loading');
@@ -63,8 +65,10 @@ function printAvatar(email, s){
 o('input')
 .on('keypress', function(e){
   if (body.hasClass('loading')) return;
-  if (e.keyCode == 13) printAvatar(email.val(), size.val());
+  if (e.keyCode == 13) printAvatar(email.val(), {
+    s: size.val() || 400
+  });
 });
 
 // get initial avatar
-printAvatar('a@gmail.com', 400);
+printAvatar('a@gmail.com', { s: 400 });
