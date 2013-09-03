@@ -11,17 +11,15 @@ var querystring = require('querystring');
  *
  * @param {String} email
  * @param {Number} size (20)
- * @param {Boolean} avatar get url to get avatar image (defautl false)
  * @return {String} gravatar url
  * @api public
  */
 
-exports.url = function (email, config, avatar) {
+exports.url = function (email, config) {
   config = config || {};
   var qs = querystring.stringify(config);
   var qs = qs === '' ? '' : '?' + qs;
-  var avatar = avatar ? 'avatar/' : '';
-  var url = 'https://secure.gravatar.com/' + avatar + md5(email) + qs;
+  var url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
   return url;
 };
 
@@ -37,7 +35,7 @@ exports.url = function (email, config, avatar) {
 exports.img = function (email, config) {
   config = config || {};
   var size = config.s || config.size;
-  var url = exports.url(email, config, true);
+  var url = exports.url(email, config);
   var el = document.createElement('img');
   el.setAttribute('src', url);
   if (size) {
@@ -46,7 +44,6 @@ exports.img = function (email, config) {
   }
   return el;
 };
-
 
 /**
  * Looks up a profile.
@@ -57,8 +54,7 @@ exports.img = function (email, config) {
  */
 
 exports.profile = function (email, fn) {
-  var url = exports.url(email);
-
+  var url = 'https://secure.gravatar.com/' + md5(email);
   jsonp(url + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
