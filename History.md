@@ -1,4 +1,15 @@
 
+1.0.6 / 2013-09-03 
+==================
+
+  * core: fix profile url bug.
+  * test: add testing component
+
+1.0.5 / 2013-08-30
+==================
+
+  * Fix component dependency
+
 1.0.4 / 2013-01-15
 ==================
 
