@@ -1,15 +1,4 @@
 
-1.0.6 / 2013-09-02
-==================
-
-  * Add testing exmaple
-  * Fix #profile method bug
-
-1.0.5 / 2013-08-30
-==================
-
-  * Fix component dependency
-
 1.0.4 / 2013-01-15
 ==================
 
