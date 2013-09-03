@@ -19,6 +19,8 @@ var img;
 // fields
 var fields = {
   email: o('input[name=email]').focus(),
+  def_link: o('input[name=link]'),
+  def: o('select[name=default-option]'),
   size: o('input[name=size]')
 };
 
@@ -71,8 +73,13 @@ form.on('submit', function(e){
   if (body.hasClass('loading')) return;
   e.preventDefault();
 
+  var size = fields.size.val() || 400;
+  var def = fields.def.val();
+  var def_link = fields.def_link.val();
+
   printAvatar(fields.email.val(), {
-    s: fields.size.val() || 400
+    s: size,
+    d: def != 'OR' ? def : (def_link || '')
   });
 });
 
