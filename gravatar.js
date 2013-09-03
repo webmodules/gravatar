@@ -2,9 +2,9 @@
  * Module dependencies.
  */
 
-var md5 = require('md5')
-  , jsonp = require('jsonp')
-  , querystring = require('querystring');
+var md5 = require('md5');
+var jsonp = require('jsonp');
+var querystring = require('querystring');
 
 /**
  * Creates an avatar url
@@ -17,9 +17,9 @@ var md5 = require('md5')
 
 exports.url = function (email, config) {
   config = config || {};
-  var qs = querystring.stringify(config)
-    , qs = qs === "" ? "" : "?" + qs
-    , url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
+  var qs = querystring.stringify(config);
+  var qs = qs === '' ? '' : '?' + qs;
+  var url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
   return url;
 };
 
@@ -45,7 +45,6 @@ exports.img = function (email, config) {
   return el;
 };
 
-
 /**
  * Looks up a profile.
  *
@@ -55,7 +54,7 @@ exports.img = function (email, config) {
  */
 
 exports.profile = function (email, fn) {
-  var url = exports.url(email);
+  var url = 'https://secure.gravatar.com/' + md5(email);
   jsonp(url + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
