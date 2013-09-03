@@ -21,6 +21,7 @@ var fields = {
   email: o('input[name=email]').focus(),
   def_link: o('input[name=link]'),
   def: o('select[name=default-option]'),
+  force: o('input[name=force-default]'),
   size: o('input[name=size]')
 };
 
@@ -73,14 +74,22 @@ form.on('submit', function(e){
   if (body.hasClass('loading')) return;
   e.preventDefault();
 
+  // size
   var size = fields.size.val() || 400;
+  var options = { s: size };
+
+  // default value
   var def = fields.def.val();
   var def_link = fields.def_link.val();
+  def = def != 'OR' ? def : (def_link || false);
+  if (def) options.d = def;
 
-  printAvatar(fields.email.val(), {
-    s: size,
-    d: def != 'OR' ? def : (def_link || '')
-  });
+  // force default
+  var force = fields.force.is(':checked');
+  if (force) options.f = force;
+
+  printAvatar(fields.email.val(), options);
+  console.log('-> options -> ', options);
 });
 
 // get initial avatar
