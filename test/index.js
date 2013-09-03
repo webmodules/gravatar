@@ -82,7 +82,7 @@ form.on('submit', function(e){
   // default value
   var def = fields.def.val();
   var def_link = fields.def_link.val();
-  def = def != 'OR' ? def : (def_link || false);
+  def = def != 'image' ? def : (def_link || false);
   if (def) options.d = def;
 
   // force default
