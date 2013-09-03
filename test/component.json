@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "dependencies": {
     "component/jquery": "*",
-    "learnboost/gravatar-component": "1.0.5"
+    "learnboost/gravatar-component": "1.0.6"
   },
   "scripts": ["index.js"]
 }
