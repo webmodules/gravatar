@@ -11,11 +11,16 @@ var Grt = require('gravatar');
  */
 
 var body = o('body');
+var form = o('form.gravatar-form');
 var img_ph = o('.image-placeholder');
 var profile_ph = o('.profile-placeholder');
-var email = o('input[name=email]').focus();
-var size = o('input[name=size]');
 var img;
+
+// fields
+var fields = {
+  email: o('input[name=email]').focus(),
+  size: o('input[name=size]')
+};
 
 /**
  * Print the gratar image appending
@@ -62,11 +67,12 @@ function printAvatar(email, opts){
 
 // input keypress event
 
-o('input')
-.on('keypress', function(e){
+form.on('submit', function(e){
   if (body.hasClass('loading')) return;
-  if (e.keyCode == 13) printAvatar(email.val(), {
-    s: size.val() || 400
+  e.preventDefault();
+
+  printAvatar(fields.email.val(), {
+    s: fields.size.val() || 400
   });
 });
 

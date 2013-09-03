@@ -60,15 +60,19 @@
     <h2>Gravatar component</h2>
     <script src="build/build.js"></script>
 
-    <p>
-      <label>Email: </label>
-      <input name="email" type="email" value="a@gmail.com" />
-    </p>
+    <form class="gravatar-form" method="GET" action="#">
+      <p>
+        <label>Email: </label>
+        <input name="email" type="email" value="a@gmail.com" />
+      </p>
 
-    <p>
-      <label>Size: </label>
-      <input name="size" type="number" value="400" />
-    </p>
+      <p>
+        <label>Size: </label>
+        <input name="size" type="number" value="400" />
+      </p>
+
+      <p><button>send</button></p>
+    </form>
 
     <div class="blocks">
       <div class="image-placeholder"><img scr="#" /></div>
