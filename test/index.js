@@ -22,6 +22,7 @@ var fields = {
   def_link: o('input[name=link]'),
   def: o('select[name=default-option]'),
   force: o('input[name=force-default]'),
+  rating: o('select[name=rating]'),
   size: o('input[name=size]')
 };
 
@@ -88,8 +89,11 @@ form.on('submit', function(e){
   var force = fields.force.is(':checked');
   if (force) options.f = force;
 
+  // rating
+  var rating = fields.rating.val() || 'g';
+  options.r = rating;
+
   printAvatar(fields.email.val(), options);
-  console.log('-> options -> ', options);
 });
 
 // get initial avatar
