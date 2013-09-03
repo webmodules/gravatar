@@ -36,6 +36,11 @@ Looks up a profile
 
 Shortcut that calls `.profile` to get a username from an email.
 
+## Test
+
+* Build example component doing `make`
+* Open `test/index.html` file
+
 ## License
 
   MIT
