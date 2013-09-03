@@ -11,7 +11,7 @@ var querystring = require('querystring');
  *
  * @param {String} email
  * @param {Number} size (20)
- * @param {Boolean} avatar (defautl false)
+ * @param {Boolean} avatar get url to get avatar image (defautl false)
  * @return {String} gravatar url
  * @api public
  */
