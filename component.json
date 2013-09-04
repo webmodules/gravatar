@@ -1,0 +1,11 @@
+{
+  "name": "gravatar-test",
+  "repo": "learnboost/gravatar-test",
+  "description": "Component Gravatar Testing",
+  "version": "0.1.0",
+  "dependencies": {
+    "component/jquery": "*",
+    "learnboost/gravatar-component": "1.0.5"
+  },
+  "scripts": ["index.js"]
+}
