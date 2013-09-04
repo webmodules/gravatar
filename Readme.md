@@ -1,7 +1,8 @@
 
 # gravatar
 
-  Generate client-side gravatars
+  Generate client-side gravatars. [Testing
+  page](http://learnboost.github.io/gravatar-component/).
 
 ## Installation
 
