@@ -19,7 +19,7 @@ exports.url = function (email, config) {
   config = config || {};
   var qs = querystring.stringify(config);
   var qs = qs === '' ? '' : '?' + qs;
-  var url = 'https://secure.gravatar.com/avatar/' + md5(email) + qs;
+  var url = 'https://secure.gravatar.com/avatar/' + md5(email.trim().toLowerCase()) + qs;
   return url;
 };
 
@@ -32,7 +32,7 @@ exports.url = function (email, config) {
  */
 
 exports.profile = function (email, fn) {
-  var url = 'https://secure.gravatar.com/' + md5(email);
+  var url = 'https://secure.gravatar.com/' + md5(email.trim().toLowerCase());
   jsonp(url + '.json', function (err, obj) {
     if (err) return fn(err);
     if (obj && obj.entry) {
