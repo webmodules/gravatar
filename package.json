@@ -9,7 +9,7 @@
   },
   "browser": {
     "md5": "md5-component",
-    "querystring": "querystring-component"
+    "querystring": "component-querystring"
   },
   "component": {
     "scripts": {
