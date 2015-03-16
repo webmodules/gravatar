@@ -8,6 +8,6 @@
     "learnboost/jsonp": "0.0.2",
     "component/querystring": "*"
   },
-  "scripts": ["gravatar.js"],
-  "main": "gravatar.js"
+  "scripts": ["index.js"],
+  "main": "index.js"
 }
