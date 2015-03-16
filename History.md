@@ -1,8 +1,17 @@
 
+1.1.0 / 2015-03-16
+==================
+
+  * update deps, fix browserify build
+  * rename `gravatar.js` to `index.js`
+  * Gravatar email hash shall be lower-case (#11, @Gyran)
+  * Readme: Add link to testing github page
+  * test: change option for default image
+
 1.0.6 / 2013-09-03
 ==================
 
-  * core: fix profile url bug.
+  * core: fix profile url bug
   * test: add testing component
 
 1.0.5 / 2013-08-30
@@ -28,4 +37,4 @@
 0.0.1 / 2012-07-04
 ==================
 
-  * Initial release.
+  * Initial release
