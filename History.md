@@ -1,4 +1,10 @@
 
+1.1.1 / 2015-03-16
+==================
+
+  * package: fix "querystring" browser mapping
+  * update "querystring" to v1.3.2
+
 1.1.0 / 2015-03-16
 ==================
 
