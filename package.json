@@ -4,6 +4,7 @@
   "version": "1.1.1",
   "dependencies": {
     "component-querystring": "2.0.1",
+    "js-sha256": "0.9.0",
     "jsonp": "0.1.0",
     "md5-component": "0.0.1"
   },
