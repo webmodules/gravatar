@@ -3,12 +3,11 @@
   "description": "Simple browser implementation of the Gravatar API",
   "version": "1.1.1",
   "dependencies": {
-    "md5-component": "0.0.1",
-    "jsonp": "0.1.0",
-    "component-querystring": "1.3.2"
+    "component-querystring": "2.0.1",
+    "js-sha256": "0.9.0",
+    "jsonp": "0.1.0"
   },
   "browser": {
-    "md5": "md5-component",
     "querystring": "component-querystring"
   },
   "component": {
