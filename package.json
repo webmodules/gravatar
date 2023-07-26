@@ -8,7 +8,6 @@
     "jsonp": "0.1.0"
   },
   "browser": {
-    "md5": "md5-component",
     "querystring": "component-querystring"
   },
   "component": {
